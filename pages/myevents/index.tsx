@@ -65,7 +65,6 @@ export default function EventIndex() {
       {events.length == 0 ? (
         <ProductHeroLayout
           sxBackground={{
-            backgroundImage: `url(${"backgroundImage"})`,
             backgroundColor: "#fff", // Average color of the background image.
             backgroundPosition: "center",
           }}

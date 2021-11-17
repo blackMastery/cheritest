@@ -14,6 +14,10 @@ import { useState } from 'react'
 import MuiAlert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 
+import getConfig from 'next/config';
+const { publicRuntimeConfig } = getConfig();
+const { apiUrl } = publicRuntimeConfig
+
 
 function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -51,7 +55,7 @@ export default function LoginIn() {
 
     try {
       mutateUser(
-        await fetchJson('/api/login', {
+        await fetchJson(`${ apiUrl }/api/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(body),

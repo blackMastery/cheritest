@@ -11,6 +11,9 @@ import Head from "next/head";
 import RegisterForm from "../components/forms/signupform";
 import {useRouter} from "next/router";
 
+import getConfig from 'next/config';
+const { publicRuntimeConfig } = getConfig();
+const { apiUrl } = publicRuntimeConfig
 
 const theme = createTheme();
 
